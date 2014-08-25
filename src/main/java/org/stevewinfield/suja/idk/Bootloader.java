@@ -69,7 +69,20 @@ public class Bootloader {
         IDK.VERSION = buildProperties.getProperty("version", "0.0.0");
 
         PropertyConfigurator.configure("log4j.properties");
-        logger.info(IDK.NAME + " (Version " + IDK.VERSION + ", Build " + IDK.BUILD_NUMBER + ") is starting.");
+        System.out.println(
+                "\u001b[22;32m" + ".----------------.  .----------------.  .----------------. \n" +
+                "\u001b[22;32m" + "| .--------------. || .--------------. || .--------------. |\n" +
+                "\u001b[22;32m" + "| |     _____    | || |  ________    | || |  ___  ____   | |\n" +
+                "\u001b[22;32m" + "| |    |_   _|   | || | |_   ___ `.  | || | |_  ||_  _|  | |\n" +
+                "\u001b[22;32m" + "| |      | |     | || |   | |   `. \\ | || |   | |_/ /    | |\n" +
+                "\u001b[22;32m" + "| |      | |     | || |   | |    | | | || |   |  __'.    | |\n" +
+                "\u001b[22;32m" + "| |     _| |_    | || |  _| |___.' / | || |  _| |  \\ \\_  | |\n" +
+                "\u001b[22;32m" + "| |    |_____|   | || | |________.'  | || | |____||____| | |\n" +
+                "\u001b[22;32m" + "| |              | || |              | || |              | |\n" +
+                "\u001b[22;32m" + "| '--------------' || '--------------' || '--------------' |\n" +
+                "\u001b[22;32m" + " '----------------'  '----------------'  '----------------' "
+        );
+        logger.info("Version " + IDK.VERSION + ", Build " + IDK.BUILD_NUMBER + " is starting.");
 
         final Properties pFile = new Properties();
         File propertiesFile = new File("server.properties");
